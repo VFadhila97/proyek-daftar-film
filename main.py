@@ -18,7 +18,10 @@ while True:
     print("\n=== DAFTAR FILM ===")
     print("1. Tambah film")
     print("2. Tampilkan film")
-    print("3. Keluar")
+    print("3. Statistik film")
+    print("4. Urutkan film berdasarkan rating")
+    print("5. Buat laporan")
+    print("6. Keluar")
 
     pilihan = input("Pilih menu: ")
 
@@ -38,7 +41,7 @@ while True:
             print("Film berhasil ditambahkan.")
 
         except ValueError:
-            print("Tahun harus berupa bilangan bulat dan rating harus angka.")
+            print("Tahun harus bilangan bulat dan rating harus angka.")
 
         except FilmTidakValidError as error:
             print(f"Data tidak valid: {error}")
@@ -47,5 +50,22 @@ while True:
         pengelola.tampilkan_film()
 
     elif pilihan == "3":
+        statistik = pengelola.hitung_statistik()
+        print(f"Jumlah film: {statistik['jumlah']}")
+        print(f"Rata-rata rating: {statistik['rata_rata']:.2f}")
+
+    elif pilihan == "4":
+        daftar_urut = pengelola.urutkan_film(terbalik=True)
+
+        for film in daftar_urut:
+            print(f"{film.judul} - Rating: {film.rating}")
+
+    elif pilihan == "5":
+        pengelola.buat_laporan()
+
+    elif pilihan == "6":
         print("Program selesai.")
         break
+
+    else:
+        print("Pilihan tidak tersedia.")

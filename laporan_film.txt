@@ -1,0 +1,4 @@
+LAPORAN DAFTAR FILM
+===================
+Jumlah film: 3
+Rata-rata rating: 8.67
