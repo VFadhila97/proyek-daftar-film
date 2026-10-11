@@ -1,4 +1,4 @@
 LAPORAN DAFTAR FILM
 ===================
-Jumlah film: 4
-Rata-rata rating: 8.70
+Jumlah film: 6
+Rata-rata rating: 8.55
